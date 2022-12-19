@@ -11,7 +11,6 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    // newText ? setText(newText) : setText("No Value Found");
   };
 
   const handleLowerClick = () => {
