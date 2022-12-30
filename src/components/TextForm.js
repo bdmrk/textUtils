@@ -11,15 +11,18 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Text Converted To Uppercase");
   };
 
   const handleLowerClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Text Converted To Lower case");
   };
 
   const handleClearClick = () => {
     setText("");
+    props.showAlert("Text Cleared");
   };
 
   const handleCopyClick = () => {
@@ -28,12 +31,13 @@ export default function TextForm(props) {
     text.select();
     text.setSelectionRange(0, 9999);
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text Copied");
   };
 
   const handleExtraSpaceClick = () => {
     let removeSpace = text.split(/[ ]+/);
-
     setText(removeSpace.join(" "));
+    props.showAlert("Extra space has been removed");
   };
 
   return (
